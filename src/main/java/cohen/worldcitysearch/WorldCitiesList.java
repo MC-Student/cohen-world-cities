@@ -29,7 +29,11 @@ public class WorldCitiesList
             String city = cities.get(i).get(1);
             String lat = cities.get(i).get(2);
             String lon = cities.get(i).get(3);
-            WorldCity worldCity = new WorldCity(city, Double.parseDouble(lat), Double.parseDouble(lon));
+            WorldCity worldCity = new WorldCity(
+                    city,
+                    Double.parseDouble(lat),
+                    Double.parseDouble(lon)
+            );
             worldCities.add(worldCity);
         }
     }
