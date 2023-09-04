@@ -23,7 +23,7 @@ class WorldCitiesListTest
     {
         WorldCitiesList cities = new WorldCitiesList();
 
-        WorldCity actual = new WorldCity("Lincolnwood", 42.0054, -87.733);
+        WorldCity actual = new WorldCity("Park Forest", 41.4817, -87.6867);
 
         WorldCity request = new WorldCity("", 41.8375, -87.6866);
 
