@@ -17,6 +17,7 @@ public class WorldCity
     {
         this.cityName = cityName;
     }
+
     public String getCityName()
     {
         return cityName;

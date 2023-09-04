@@ -31,7 +31,11 @@ public class WorldCitySearchServlet extends HttpServlet
 
         WorldCity city = citiesList.getClosestCity(worldCity);
 
-        WorldCitySearchResponse response = new WorldCitySearchResponse(city.getCityName(), city.getLat(), city.getLon());
+        WorldCitySearchResponse response = new WorldCitySearchResponse(
+                city.getCityName(),
+                city.getLat(),
+                city.getLon()
+        );
         resp.setContentType("text/json");
         resp.getWriter().println(gson.toJson(response));
     }

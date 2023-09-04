@@ -48,7 +48,7 @@ public class WorldCitiesList
         WorldCity closest = worldCities.get(0);
         int searchIndex;
 
-        if(distance(requestCity, closest) == 0)
+        if (distance(requestCity, closest) == 0)
         {
             closest = worldCities.get(1);
             searchIndex = 2;
@@ -63,7 +63,7 @@ public class WorldCitiesList
             double currentDist = distance(requestCity, closest);
             WorldCity currentCity = worldCities.get(searchIndex);
 
-            if(distance(requestCity, currentCity) < currentDist)
+            if (distance(requestCity, currentCity) < currentDist)
             {
                 closest = currentCity;
             }
@@ -77,6 +77,6 @@ public class WorldCitiesList
         double latDif = compareToCity.getLat() - givenCity.getLat();
         double lonDif = compareToCity.getLon() - givenCity.getLat();
 
-        return Math.sqrt((latDif*latDif) * (lonDif*lonDif));
+        return Math.sqrt((latDif * latDif) * (lonDif * lonDif));
     }
 }
