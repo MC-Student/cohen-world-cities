@@ -27,7 +27,7 @@ public class WorldCitySearchServlet extends HttpServlet
     {
         double lat = Double.parseDouble(req.getParameter("latitude"));
         double lon = Double.parseDouble(req.getParameter("longitude"));
-        WorldCity worldCity = new WorldCity(lat, lon);
+        WorldCity worldCity = new WorldCity("", lat, lon);
 
         WorldCity city = citiesList.getClosestCity(worldCity);
 

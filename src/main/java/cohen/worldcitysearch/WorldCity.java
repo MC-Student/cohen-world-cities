@@ -2,20 +2,15 @@ package cohen.worldcitysearch;
 
 public class WorldCity
 {
-    private String cityName;
+    private final String cityName;
     private final double lat;
     private final double lon;
 
-    public WorldCity(double lat, double lon)
+    public WorldCity(String city, double lat, double lon)
     {
-        cityName = null;
+        this.cityName = city;
         this.lat = lat;
         this.lon = lon;
-    }
-
-    public void setCityName(String cityName)
-    {
-        this.cityName = cityName;
     }
 
     public String getCityName()

@@ -23,10 +23,9 @@ class WorldCitiesListTest
     {
         WorldCitiesList cities = new WorldCitiesList();
 
-        WorldCity actual = new WorldCity(42.0054, -87.733);
-        actual.setCityName("Lincolnwood");
+        WorldCity actual = new WorldCity("Lincolnwood", 42.0054, -87.733);
 
-        WorldCity request = new WorldCity(41.8375, -87.6866);
+        WorldCity request = new WorldCity("", 41.8375, -87.6866);
 
         WorldCity result = cities.getClosestCity(request);
 

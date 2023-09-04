@@ -29,8 +29,7 @@ public class WorldCitiesList
             String city = cities.get(i).get(1);
             String lat = cities.get(i).get(2);
             String lon = cities.get(i).get(3);
-            WorldCity worldCity = new WorldCity(Double.parseDouble(lat), Double.parseDouble(lon));
-            worldCity.setCityName(city);
+            WorldCity worldCity = new WorldCity(city, Double.parseDouble(lat), Double.parseDouble(lon));
             worldCities.add(worldCity);
         }
     }
@@ -46,24 +45,15 @@ public class WorldCitiesList
         //no way to get past O(n) time in worst case scenario
 
         WorldCity closest = worldCities.get(0);
-        int searchIndex;
 
-        if (distance(requestCity, closest) == 0)
-        {
-            closest = worldCities.get(1);
-            searchIndex = 2;
-        }
-        else
-        {
-            searchIndex = 1;
-        }
-
-        for (int i = searchIndex; i < worldCities.size(); i++)
+        for (int i = 1; i < worldCities.size(); i++)
         {
             double currentDist = distance(requestCity, closest);
-            WorldCity currentCity = worldCities.get(searchIndex);
+            WorldCity currentCity = worldCities.get(i);
 
-            if (distance(requestCity, currentCity) < currentDist)
+            double newDistance = distance(requestCity, currentCity);
+
+            if (newDistance < currentDist && newDistance != 0)
             {
                 closest = currentCity;
             }
@@ -75,7 +65,7 @@ public class WorldCitiesList
     private double distance(WorldCity givenCity, WorldCity compareToCity)
     {
         double latDif = compareToCity.getLat() - givenCity.getLat();
-        double lonDif = compareToCity.getLon() - givenCity.getLat();
+        double lonDif = compareToCity.getLon() - givenCity.getLon();
 
         return Math.sqrt((latDif * latDif) * (lonDif * lonDif));
     }
