@@ -23,12 +23,10 @@ class WorldCitiesListTest
     {
         WorldCitiesList cities = new WorldCitiesList();
 
-        WorldCity actual = new WorldCity("Chicago", 41.8375, -87.6866);
-
         WorldCity result = cities.getClosestCity(41.83, -87.6);
 
-        assertEquals(result.city(), actual.city());
-        assertEquals(result.lat(), actual.lat());
-        assertEquals(result.lon(), actual.lon());
+        assertEquals(result.city(), "Chicago");
+        assertEquals(result.lat(), 41.8375);
+        assertEquals(result.lon(), -87.6866);
     }
 }
