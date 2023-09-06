@@ -23,9 +23,9 @@ class WorldCitiesListTest
     {
         WorldCitiesList cities = new WorldCitiesList();
 
-        WorldCity actual = new WorldCity("Park Forest", 41.4817, -87.6867);
+        WorldCity actual = new WorldCity("Chicago", 41.8375, -87.6866);
 
-        WorldCity result = cities.getClosestCity(41.8375, -87.686);
+        WorldCity result = cities.getClosestCity(41.83, -87.6);
 
         assertEquals(result.city(), actual.city());
         assertEquals(result.lat(), actual.lat());

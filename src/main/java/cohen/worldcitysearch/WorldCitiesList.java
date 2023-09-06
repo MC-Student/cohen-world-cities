@@ -63,6 +63,7 @@ public class WorldCitiesList
             if (newDistance < currentDist)
             {
                 closest = currentCity;
+                currentDist = distance(requestCity, closest);
             }
         }
 

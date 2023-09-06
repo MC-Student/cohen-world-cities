@@ -25,8 +25,8 @@ public class WorldCitySearchServlet extends HttpServlet
             HttpServletResponse resp
     ) throws IOException
     {
-        double lat = Double.parseDouble(req.getParameter("latitude"));
-        double lon = Double.parseDouble(req.getParameter("longitude"));
+        double lat = Double.parseDouble(req.getParameter("lat"));
+        double lon = Double.parseDouble(req.getParameter("lon"));
 
         WorldCity city = citiesList.getClosestCity(lat, lon);
 
