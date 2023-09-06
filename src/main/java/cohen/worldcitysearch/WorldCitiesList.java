@@ -52,14 +52,15 @@ public class WorldCitiesList
 
         WorldCity closest = worldCities.get(0);
 
+        double currentDist = distance(requestCity, closest);
+
         for (int i = 1; i < worldCities.size(); i++)
         {
-            double currentDist = distance(requestCity, closest);
             WorldCity currentCity = worldCities.get(i);
 
             double newDistance = distance(requestCity, currentCity);
 
-            if (newDistance < currentDist && newDistance != 0)
+            if (newDistance < currentDist)
             {
                 closest = currentCity;
             }
