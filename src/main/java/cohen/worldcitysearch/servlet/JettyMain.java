@@ -16,7 +16,7 @@ public class JettyMain
 
         // Adds the Servlet to the Server
         ServletHandler handler = new ServletHandler();
-        handler.addServletWithMapping(WorldCitySearchServlet.class, "/definition");
+        handler.addServletWithMapping(WorldCitySearchServlet.class, "/worldCities");
         server.setHandler(handler);
 
         // Starts the server until this program exists.
