@@ -25,8 +25,8 @@ class WorldCitiesListTest
 
         WorldCity result = cities.getClosestCity(41.83, -87.6);
 
-        assertEquals(result.city(), "Chicago");
-        assertEquals(result.lat(), 41.8375);
-        assertEquals(result.lon(), -87.6866);
+        assertEquals("Chicago", result.city());
+        assertEquals(41.8375, result.lat());
+        assertEquals(-87.6866, result.lon());
     }
 }
