@@ -43,10 +43,12 @@ public class WorldCitiesList
         return worldCities;
     }
 
-    public WorldCity getClosestCity(WorldCity requestCity)
+    public WorldCity getClosestCity(double lat, double lon)
     {
         //what about kd-trees?? bounding boxes? to make this faster. Although seems like overall
         //no way to get past O(n) time in worst case scenario
+
+        WorldCity requestCity = new WorldCity("", lat, lon);
 
         WorldCity closest = worldCities.get(0);
 
@@ -68,9 +70,9 @@ public class WorldCitiesList
 
     private double distance(WorldCity givenCity, WorldCity compareToCity)
     {
-        double latDif = compareToCity.getLat() - givenCity.getLat();
-        double lonDif = compareToCity.getLon() - givenCity.getLon();
+        double latDif = compareToCity.lat() - givenCity.lat();
+        double lonDif = compareToCity.lon() - givenCity.lon();
 
-        return Math.sqrt((latDif * latDif) * (lonDif * lonDif));
+        return Math.sqrt((latDif * latDif) + (lonDif * lonDif));
     }
 }

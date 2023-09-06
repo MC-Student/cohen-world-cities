@@ -23,13 +23,12 @@ public class WorldCitySearchServlet extends HttpServlet
     protected void doGet(
             HttpServletRequest req,
             HttpServletResponse resp
-    ) throws ServletException, IOException
+    ) throws IOException
     {
         double lat = Double.parseDouble(req.getParameter("latitude"));
         double lon = Double.parseDouble(req.getParameter("longitude"));
-        WorldCity worldCity = new WorldCity("", lat, lon);
 
-        WorldCity city = citiesList.getClosestCity(worldCity);
+        WorldCity city = citiesList.getClosestCity(lat, lon);
 
         WorldCitySearchResponse response = new WorldCitySearchResponse(
                 city.getCityName(),
