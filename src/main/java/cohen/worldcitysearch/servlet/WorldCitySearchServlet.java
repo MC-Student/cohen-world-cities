@@ -11,11 +11,17 @@ import java.io.IOException;
 
 public class WorldCitySearchServlet extends HttpServlet
 {
-    private final WorldCitiesList citiesList = new WorldCitiesList();
-    private final Gson gson = new Gson();
+    private final WorldCitiesList citiesList;
+    private final Gson gson;
 
     public WorldCitySearchServlet() throws IOException
     {
+        this(new WorldCitiesList(), new Gson());
+    }
+    public WorldCitySearchServlet(WorldCitiesList citiesList, Gson gson) throws IOException
+    {
+        this.citiesList = citiesList;
+        this.gson = gson;
     }
 
     @Override
